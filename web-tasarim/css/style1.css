@@ -312,4 +312,88 @@ ul {
     cursor: pointer;
     margin-left: 2rem;
 }
+/** EVENTS-Images Section**/
+section#events-img{
+    padding-top: 8rem;
+}
+.images-items {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 'item-1 item-2 item-3 item-3'
+                         'item-1 item-4 item-5 item-6'
+                         'item-7 item-7 item-8 item-6'   ;                     
+}
+.images-item {
+    width: 100%; 
+    height: 25rem;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+ .images-item::before {
+    content: '';
+    position: absolute;
+    background-color: rgba(230, 73, 112, 0.712);
+    width: 0;
+    height: 0;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: var(--general-transition);
+}
+.images-item:hover::before {
+    opacity: 1;
+    width: 100%;
+    height: 100%;
+}
+.images-item span {
+    font-size: 5rem;
+    color: var(--light-color);
+    position: relative;
+    z-index: 90;
+    opacity: 0;
+    transition: var(--general-transition);
+}
+.images-item:hover span {
+    opacity: 1;
+}
+.images-item-1 {
+    grid-area: item-1;
+    min-height: 50rem;
+    background-image: url('../img/konser1.jpeg');
+}
+.images-item-2 {
+    grid-area: item-2;
+    background-image: url('../img/konser2.jpg');
+}
+.images-item-3 {
+    grid-area: item-3;
+    background-image: url('../img/sinema1.jpg');
+}
+.images-item-4 {
+    grid-area: item-4;
+    background-image: url('../img/sinema2.jpg');
+}
+.images-item-5 {
+    grid-area: item-5;
+    background-image: url('../img/tiyatro1.jpg');
+}
+.images-item-6 {
+    grid-area: item-6;
+    min-height: 50rem;
+    background-image: url('../img/tiyatro2.jpg');
+}
+.images-item-7 {
+    grid-area: item-7;
+    background-image: url('../img/tiyatro3.jpg');
+}
+.images-item-8 {
+    grid-area: item-8;
+    background-image: url('../img/tiyatro4.jpg');
+}
 
